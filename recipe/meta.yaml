@@ -45,8 +45,6 @@ test:
     - grep -iE "@jupyterlab/ui-profiler.*v{{ version }}.*OK" labextensions
     - grep -iE "jupyterlab_ui_profiler.*{{ version }}.*OK" server_extensions
     - grep -iE "jupyterlab_ui_profiler.*{{ version }}.*OK" serverextensions
-    - grep -iE "jupyterlab_ui_profiler.*OK" server_extensions
-    - grep -iE "jupyterlab_ui_profiler.*OK" serverextensions
   requires:
     - {{ lab }}
     - m2-grep  # [win]
