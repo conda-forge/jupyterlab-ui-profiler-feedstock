@@ -1,6 +1,5 @@
 {% set lab = "jupyterlab >=3.4.7,<4.0.0a0" %}
 {% set version = "0.1.8" %}
-{% set lab = "jupyterlab >=3.4.7,<4.0.0a0" %}
 
 package:
   name: jupyterlab-ui-profiler
@@ -44,9 +43,8 @@ test:
     - jupyter serverextension list 1>serverextensions 2>&1
     # check
     - grep -iE "@jupyterlab/ui-profiler.*v{{ version }}.*OK" labextensions
-    # TODO: fix upstream
-    # - grep -iE "jupyterlab_ui_profiler.*{{ version }}.*OK" server_extensions
-    # - grep -iE "jupyterlab_ui_profiler.*{{ version }}.*OK" serverextensions
+    - grep -iE "jupyterlab_ui_profiler.*{{ version }}.*OK" server_extensions
+    - grep -iE "jupyterlab_ui_profiler.*{{ version }}.*OK" serverextensions
     - grep -iE "jupyterlab_ui_profiler.*OK" server_extensions
     - grep -iE "jupyterlab_ui_profiler.*OK" serverextensions
   requires:
