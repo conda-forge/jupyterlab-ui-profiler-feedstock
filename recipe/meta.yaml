@@ -1,5 +1,6 @@
 {% set lab = "jupyterlab >=3.4.7,<4.0.0a0" %}
-{% set version = "0.1.8" %}
+{% set lab = "jupyterlab >=3.4.7,<4.0.0a0" %}
+{% set version = "0.2.0" %}
 
 package:
   name: jupyterlab-ui-profiler
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab-ui-profiler/jupyterlab_ui_profiler-{{ version }}.tar.gz
-  sha256: a05fb218d09d59e4e5bc8b8401f6aaff0c0c9a71686680dc8793a2d66a908519
+  sha256: 51ada61ef03b864f05344c1990b6a1dde0e95c688054b9229afe8fd82c3efa57
 
 build:
   noarch: python
