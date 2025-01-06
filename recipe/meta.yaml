@@ -9,13 +9,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/j/jupyterlab-ui-profiler/jupyterlab_ui_profiler-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/j/jupyterlab-ui-profiler/jupyterlab_ui_profiler-{{ version }}.tar.gz
   sha256: 3cccc879269fb715dfaf4e1d0dcffbf825fc2c4a172cbaf89b49076b66cb4cdf
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -24,9 +24,9 @@ requirements:
     - hatchling >=1.4.0
     - {{ lab }}
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - jupyter_server >=1.6,<3
   run_constrained:
     - {{ lab }}
@@ -52,6 +52,7 @@ test:
     - {{ lab }}
     - m2-grep  # [win]
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/jupyterlab/ui-profiler
