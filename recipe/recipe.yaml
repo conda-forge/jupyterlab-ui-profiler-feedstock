@@ -8,7 +8,7 @@ context:
   jupyterlab_max: "5.0.0"
   python_check_max: "3.14"
   grep_py: |
-    python -c "import re, sys, pathlib; a = sys.argv[1:]; assert re.findall(a[0], pathlib.Path(a[1]).read_text()))"
+    python -c "import re, sys, pathlib; a = sys.argv[1:]; assert re.findall(a[0], pathlib.Path(a[1]).read_text()), a[0]"
 
 package:
   name: jupyterlab-ui-profiler
@@ -52,13 +52,10 @@ tests:
     script:
       - jupyter labextension list
       - jupyter server extension list
-      - jupyter serverextension list
       - jupyter labextension list 1>labextensions 2>&1
       - jupyter server extension list 1>server_extensions 2>&1
-      - jupyter serverextension list 1>serverextensions 2>&1
       - ${{ grep_py }} "@jupyterlab/ui-profiler.*v${{ version }}.*OK" labextensions
       - ${{ grep_py }} "jupyterlab_ui_profiler.*${{ version }}.*OK" server_extensions
-      - ${{ grep_py }} "jupyterlab_ui_profiler.*${{ version }}.*OK" serverextensions
 
 about:
   summary: JupyterLab extension for profiling UI performance
