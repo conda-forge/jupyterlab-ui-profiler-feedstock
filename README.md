@@ -3,13 +3,15 @@ About jupyterlab-ui-profiler-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyterlab-ui-profiler-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/jupyterlab/ui-profiler
+Home: https://pypi.org/project/jupyterlab-ui-profiler
 
 Package license: BSD-3-Clause
 
 Summary: JupyterLab extension for profiling UI performance
 
-Documentation: https://ui-profiler.readthedocs.io
+Development: https://github.com/jupyterlab/ui-profiler
+
+Documentation: https://ui-profiler.readthedocs.io/
 
 Current build status
 ====================

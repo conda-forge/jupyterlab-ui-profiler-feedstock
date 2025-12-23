@@ -31,7 +31,7 @@ requirements:
     - hatchling >=1.4.0
     - jupyterlab ${{ jupyterlab_min }}.*
     - pip
-    - python ${{ python_min }}
+    - python ${{ python_min }}.*
   run:
     - python >=${{ python_min }}
     - jupyter_server >=1.6,<3
